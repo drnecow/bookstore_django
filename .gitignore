@@ -1,2 +1,5 @@
-#PyCharm-specific folder
+# PyCharm-specific directory
 /Bookstore/.idea/
+
+# all __pycache__ directories
+**/__pycache__/
