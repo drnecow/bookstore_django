@@ -1,6 +1,8 @@
 from django.db import models
+
 from user.models import UserOrderAddress, BookstoreUser
 from books.models import Book
+from orders.managers import OrderEntryQuerySet
 
 
 # One of fixed order statuses: 1 — in assembly, 2 — waiting for payment, 3 — waiting for delivery, ...
@@ -26,6 +28,8 @@ class OrderEntry(models.Model):
     maximum_delivery_date = models.DateField(null=True)
     reception_type = models.CharField(max_length=10)
     status = models.ForeignKey(to=OrderStatus, on_delete=models.CASCADE)
+
+    entries = OrderEntryQuerySet.as_manager()
 
     class Meta:
         verbose_name = 'Запись о заказе'

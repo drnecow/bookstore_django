@@ -1,6 +1,7 @@
 from django.db import models
-from books.admin import Book
 
+from books.admin import Book
+from storages.managers import StorageQuerySet
 
 # One of Kazakhstan's cities
 class City(models.Model):
@@ -22,6 +23,8 @@ class Storage(models.Model):
     address = models.CharField(max_length=200)
     is_functional = models.BooleanField(default=True)
     delivery_available_cities = models.ManyToManyField(to=City, related_name='delivery_available_cities')
+
+    storages = StorageQuerySet.as_manager()
 
     class Meta:
         verbose_name = 'Склад'

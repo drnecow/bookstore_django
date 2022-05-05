@@ -1,6 +1,8 @@
 from django.db import models
+
 from storages.models import City, Storage
 from books.models import Book
+from supply.managers import SupplyEntryQuerySet
 
 
 # One of fixed supply statuses: 1 — waiting for delivery, 2 — late, 3 — delivered, 4 — cancelled
@@ -41,6 +43,8 @@ class SupplyEntry(models.Model):
     scheduled_date = models.DateField()
     due_date = models.DateField()
     status = models.ForeignKey(to=SupplyStatus, on_delete=models.CASCADE)
+
+    entries = SupplyEntryQuerySet.as_manager()
 
     class Meta:
         verbose_name = 'Запись о поставке'
