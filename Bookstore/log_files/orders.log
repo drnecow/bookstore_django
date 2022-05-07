@@ -1,0 +1,29 @@
+2022-05-07 17:23:38,873 orders.views DEBUG    All order statuses viewed by admin user: OrderStatusesAPIView API
+2022-05-07 17:27:15,119 orders.views DEBUG    New order status новый статус created by admin user: OrderStatusesAPIView API
+2022-05-07 17:31:57,801 orders.views DEBUG    Order status with id 9 successfully deleted by admin user: OrderStatusesAPIView API
+2022-05-07 18:27:46,336 orders.views DEBUG    All order entries viewed by admin: AllOrderEntriesViewSet API
+2022-05-07 18:33:16,328 orders.views DEBUG    All order entries viewed by admin: AllOrderEntriesViewSet API
+2022-05-07 18:33:54,127 orders.views DEBUG    All order entries viewed by admin: AllOrderEntriesViewSet API
+2022-05-07 18:36:09,250 orders.views DEBUG    All order entries viewed by admin: AllOrderEntriesViewSet API
+2022-05-07 19:11:57,887 orders.views DEBUG    New order entry with id '2' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:13:44,222 orders.views DEBUG    New order entry with id '2' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:15:53,730 orders.views DEBUG    New order entry with id '3' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:19:58,673 orders.views DEBUG    New order entry with id '2' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:21:03,306 orders.views DEBUG    New order entry with id '3' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:25:53,454 orders.views DEBUG    New order entry with id '3' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:26:21,237 orders.views DEBUG    New order entry with id '4' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:26:43,060 orders.views DEBUG    New order entry with id '5' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:28:41,221 orders.views DEBUG    New order entry with id '6' created by admin user: AllOrderEntriesViewSet API
+2022-05-07 19:37:25,531 orders.views DEBUG    Book with id 1 viewed: SpecificOrderEntryViewSet API
+2022-05-07 19:37:31,233 orders.views DEBUG    Book with id 2 viewed: SpecificOrderEntryViewSet API
+2022-05-07 19:37:41,137 orders.views DEBUG    Book with id 1 viewed: SpecificOrderEntryViewSet API
+2022-05-07 19:39:08,455 orders.views DEBUG    Book with id 1 viewed: SpecificOrderEntryViewSet API
+2022-05-07 19:50:03,542 orders.views DEBUG    Book with id 1 updated by admin user: SpecificBookViewSet API
+2022-05-07 19:50:39,273 orders.views DEBUG    Book with id 1 updated by admin user: SpecificBookViewSet API
+2022-05-07 20:07:44,261 orders.views DEBUG    Book with id 2 updated by admin user: SpecificBookViewSet API
+2022-05-07 20:08:39,391 orders.views DEBUG    Book with id 1 updated by admin user: SpecificBookViewSet API
+2022-05-07 20:26:48,644 orders.views DEBUG    Ordered book entry viewed by admin user: OrderedBookAPIView API
+2022-05-07 20:38:30,648 orders.views DEBUG    New ordered book entry with id '4' created by adminuser: OrderedBookAPIView API
+2022-05-07 20:44:20,956 orders.views DEBUG    Ordered book entry viewed by admin user: OrderedBookAPIView API
+2022-05-07 20:45:12,880 orders.views DEBUG    Ordered book entry with id 3 updated by admin user: OrderedBookAPIView API
+2022-05-07 20:46:39,567 orders.views DEBUG    Ordered book entry with id 2 updated by admin user: OrderedBookAPIView API

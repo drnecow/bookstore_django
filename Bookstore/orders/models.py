@@ -2,11 +2,12 @@ from django.db import models
 
 from user.models import UserOrderAddress, BookstoreUser
 from books.models import Book
+from orders.validators import validate_reception_type
 from orders.managers import OrderEntryQuerySet
 
 
 # One of fixed order statuses: 1 — in assembly, 2 — waiting for payment, 3 — waiting for delivery, ...
-# ...4 — delivered, 5 — cancelled
+# ...4 — late, 5 — delivered, 6 — cancelled
 class OrderStatus(models.Model):
     name = models.CharField(max_length=30)
 
@@ -26,9 +27,10 @@ class OrderEntry(models.Model):
     address = models.ForeignKey(to=UserOrderAddress, on_delete=models.CASCADE)
     order_date = models.DateField()
     maximum_delivery_date = models.DateField(null=True)
-    reception_type = models.CharField(max_length=10)
+    reception_type = models.CharField(max_length=10, validators=[validate_reception_type])
     status = models.ForeignKey(to=OrderStatus, on_delete=models.CASCADE)
 
+    objects = models.Manager()
     entries = OrderEntryQuerySet.as_manager()
 
     class Meta:
@@ -53,4 +55,4 @@ class OrderedBook(models.Model):
         db_table = 'ordered_books'
 
     def __str__(self):
-        return f'Order book "{self.book.name}" in order {self.related_order_entry.primary_key}'
+        return f'Order book "{self.book.name}" in order {self.related_order_entry.id}'

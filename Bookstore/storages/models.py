@@ -3,6 +3,7 @@ from django.db import models
 from books.admin import Book
 from storages.managers import StorageQuerySet
 
+
 # One of Kazakhstan's cities
 class City(models.Model):
     name = models.CharField(max_length=100)

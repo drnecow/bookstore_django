@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import AbstractUser, UserManager
 from django.contrib.auth.hashers import make_password
 
 from storages.models import City
@@ -10,7 +10,7 @@ from user.managers import BookstoreUserQuerySet, CouponQuerySet
 # User's address to which order should be delivered.
 class UserOrderAddress(models.Model):
     description = models.CharField(max_length=200)
-    city = models.ManyToManyField(to=City)
+    city = models.ForeignKey(to=City, on_delete=models.CASCADE)
 
     class Meta:
         verbose_name = 'Адрес заказа'
@@ -42,10 +42,11 @@ class Coupon(models.Model):
 
 # Project's user model
 class BookstoreUser(AbstractUser):
-    user_wishlist = models.ManyToManyField(to=Book, related_name='user_wishlist')
-    user_addresses = models.ManyToManyField(to=UserOrderAddress, related_name='user_addresses')
-    user_coupons = models.ManyToManyField(to=Coupon, related_name='user_coupons')
+    user_wishlist = models.ManyToManyField(to=Book, related_name='user_wishlist', blank=True)
+    user_addresses = models.ManyToManyField(to=UserOrderAddress, related_name='user_addresses', blank=True)
+    user_coupons = models.ManyToManyField(to=Coupon, related_name='user_coupons', blank=True)
 
+    objects = UserManager()
     users = BookstoreUserQuerySet.as_manager()
 
     # This field requires implementing hashing first.

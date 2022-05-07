@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from datetime import timedelta
+import os
+import logging
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -191,4 +193,81 @@ SIMPLE_JWT = {
     'SLIDING_TOKEN_REFRESH_EXP_CLAIM': 'refresh_exp',
     'SLIDING_TOKEN_LIFETIME': timedelta(minutes=5),
     'SLIDING_TOKEN_REFRESH_LIFETIME': timedelta(days=1),
+}
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+# Logging settings for each app
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'console': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+        },
+        'file': {
+            'format': '%(asctime)s %(name)-12s %(levelname)-8s %(message)s'
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'console'
+        },
+        'file_books': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'log_files/books.log'
+        },
+        'file_orders': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'log_files/orders.log'
+        },
+        'file_storages': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'log_files/storages.log'
+        },
+        'file_supply': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'log_files/supply.log'
+        },
+        'file_user': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'formatter': 'file',
+            'filename': 'log_files/user.log'
+        }
+    },
+    'loggers': {
+        'books': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file_books']
+        },
+        'orders': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file_orders']
+        },
+        'storages': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file_storages']
+        },
+        'supply': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file_supply']
+        },
+        'user': {
+            'level': 'DEBUG',
+            'handlers': ['console', 'file_user']
+        },
+    }
 }

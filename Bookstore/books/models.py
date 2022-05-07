@@ -1,5 +1,7 @@
 from django.db import models
 
+from books.validators import validate_cover_image, validate_isbn
+
 
 # Book's publisher
 class Publisher(models.Model):
@@ -12,7 +14,7 @@ class Publisher(models.Model):
         ordering = ['name']
 
     def __str__(self):
-        return self.name
+        return f'{self.name}, id: {self.id}'
 
 
 # Book's author or authors
@@ -27,7 +29,7 @@ class Author(models.Model):
         ordering = ['surname']
 
     def __str__(self):
-        return f'{self.surname} + {self.first_name}'
+        return f'{self.surname} {self.first_name}, id: {self.id}'
 
 
 # Book's genres
@@ -41,19 +43,19 @@ class Genre(models.Model):
         ordering = ['name']
 
     def __str__(self):
-        return self.name
+        return f'{self.name}, id: {self.id}'
 
 
 # Book, the store's ultimate commodity
 class Book(models.Model):
     name = models.CharField(max_length=300)
-    isbn = models.CharField(max_length=13)
+    isbn = models.CharField(max_length=13, validators=[validate_isbn])
     publisher = models.ForeignKey(to=Publisher, on_delete=models.CASCADE)
     authors = models.ManyToManyField(to=Author)
     genres = models.ManyToManyField(to=Genre)
     date_published = models.DateField()
     price = models.PositiveIntegerField()
-    # cover_image = models.ImageField()
+    cover_image = models.ImageField(upload_to='book_cover_images/', null=True, validators=[validate_cover_image])
 
     class Meta:
         verbose_name = 'Книга'
@@ -62,4 +64,4 @@ class Book(models.Model):
         ordering = ['name']
 
     def __str__(self):
-        return self.name
+        return f'{self.name}, id: {self.id}'

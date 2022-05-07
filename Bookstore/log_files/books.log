@@ -1,0 +1,17 @@
+2022-05-06 23:09:41,082 books.views  DEBUG    New book '���� ��������. ������������� �����-��������' created: AllBooksViewSet API
+2022-05-06 23:13:18,522 books.views  DEBUG    All books viewed: AllBooksViewSet API
+2022-05-06 23:13:53,463 books.views  DEBUG    All books viewed: AllBooksViewSet API
+2022-05-06 23:34:26,202 books.views  DEBUG    New book 'Transhumanism inc.' created: AllBooksViewSet API
+2022-05-07 00:23:24,752 books.views  DEBUG    All books viewed: AllBooksViewSet API
+2022-05-07 00:26:08,932 books.views  DEBUG    New book '����� � ������������ ����������� �������� ��������� �����' created: AllBooksViewSet API
+2022-05-07 00:54:37,201 books.views  DEBUG    New book '����������' created: AllBooksViewSet API
+2022-05-07 01:04:38,469 books.views  DEBUG    Book with id 5 viewed: SpecificBookViewSet API
+2022-05-07 01:05:04,034 books.views  DEBUG    Book with id 13 viewed: SpecificBookViewSet API
+2022-05-07 15:09:34,094 books.views  DEBUG    Book with id 13 viewed: SpecificBookViewSet API
+2022-05-07 16:42:42,251 books.views  DEBUG    Book with id 13 updated: SpecificBookViewSet API
+2022-05-07 16:47:55,803 books.views  DEBUG    Book with id 13 successfully deleted: SpecificBookViewSet API
+2022-05-07 16:48:04,675 books.views  DEBUG    Book with id 13 wasn't found: SpecificBookViewSet API
+2022-05-07 16:48:40,988 books.views  DEBUG    New book '����������' created: AllBooksViewSet API
+2022-05-07 17:11:22,983 books.views  DEBUG    Book with id 14 updated by admin user: SpecificBookViewSet API
+2022-05-07 17:15:00,584 books.views  DEBUG    All books viewed: AllBooksViewSet API
+2022-05-07 17:16:43,456 books.views  DEBUG    Book with id 14 updated by admin user: SpecificBookViewSet API
