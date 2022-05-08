@@ -12,8 +12,11 @@ The project's main functions include:
 4. Providing users the ability to make orders on the website, with product availability depending on the address, and keeping track of order delivery.
 
 
+
 ===================APPS===================
+
 The project contains 5 apps: user, books, storages, supply, and orders.
+
 
 
 ===================MODELS===================
@@ -36,7 +39,9 @@ order:
 
 
 ===================VIEWS===================
+
 Apps have following views:
+
 user:
 — LoginAPIView, create_user (for regular user creation via console)
 
@@ -54,9 +59,11 @@ orders:
 
 
 ===================AUTHENTICATION===================
+
 Authentication with JSON web token is implemented using djangorestframework-simplejwt library.
 
 
 ===================LOGGING===================
+
 Each app has its dedicated .log file. Every view's action is logged if it has been successful. Unsuccessful attempts at viewing or changing data
 is reflected only in responses to respective request.
