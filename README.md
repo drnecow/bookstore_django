@@ -13,9 +13,13 @@ The project's main functions include:
 
 
 
+
+
 ===================APPS===================
 
 The project contains 5 apps: user, books, storages, supply, and orders.
+
+
 
 
 
@@ -24,19 +28,26 @@ The project contains 5 apps: user, books, storages, supply, and orders.
 Apps contain following models:
 
 user:
+
 — BookstoreUser, UserOrderAddress, Coupon, PaymentCard
 
 books:
+
 — Book, Author, Publisher, Genre
 
 storages:
+
 — City, Storage, StorageEntry
 
 supply:
-— SupplyStatys, Supplier, SupplyEntry, SuppliedBook
+
+— SupplyStatus, Supplier, SupplyEntry, SuppliedBook
 
 order:
+
 — OrderStatus, OrderEntry, OrderedBook
+
+
 
 
 ===================VIEWS===================
@@ -44,19 +55,26 @@ order:
 Apps have following views:
 
 user:
+
 — LoginAPIView, create_user (for regular user creation via console)
 
 books:
+
 — AllBooksViewSet, SpecificBookViewSet
 
 storages:
+
 — AllStoragesViewSet, SpecificStorageViewSet, StorageEntryAPIView
 
 supply:
+
 — SupplyStatusesAPIView, AllSupplyEntriesViewSet, SpecificSupplyEntryViewSet, SuppliedBookAPIView
 
 orders:
+
 — OrderStatusesAPIView, AllOrderEntriesViewSet, SpecificOrderEntryViewSet, OrderedBookAPIView
+
+
 
 
 ===================AUTHENTICATION===================
@@ -64,7 +82,9 @@ orders:
 Authentication with JSON web token is implemented using djangorestframework-simplejwt library.
 
 
+
+
 ===================LOGGING===================
 
 Each app has its dedicated .log file. Every view's action is logged if it has been successful. Unsuccessful attempts at viewing or changing data
-is reflected only in responses to respective request.
+are only reflected in responses to respective requests.
