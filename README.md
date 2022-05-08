@@ -20,6 +20,7 @@ The project contains 5 apps: user, books, storages, supply, and orders.
 
 
 ===================MODELS===================
+
 Apps contain following models:
 
 user:
