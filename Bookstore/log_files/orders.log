@@ -27,3 +27,4 @@
 2022-05-07 20:44:20,956 orders.views DEBUG    Ordered book entry viewed by admin user: OrderedBookAPIView API
 2022-05-07 20:45:12,880 orders.views DEBUG    Ordered book entry with id 3 updated by admin user: OrderedBookAPIView API
 2022-05-07 20:46:39,567 orders.views DEBUG    Ordered book entry with id 2 updated by admin user: OrderedBookAPIView API
+2022-05-08 15:09:54,670 orders.views DEBUG    Ordered book entry with id 4 successfully deleted by admin user: OrderedBookAPIView API

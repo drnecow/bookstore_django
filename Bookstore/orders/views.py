@@ -1,7 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework import viewsets
 from rest_framework.response import Response
-from rest_framework.permissions import IsAdminUser, IsAuthenticated, AllowAny
+from rest_framework.permissions import IsAdminUser
 
 from orders.models import OrderStatus, OrderEntry, OrderedBook
 from orders.serializers import OrderStatusSerializer, ReadOnlyOrderEntrySerializer, CreationOrderEntrySerializer, OrderedBookSerializer
@@ -30,7 +30,7 @@ class OrderStatusesAPIView(APIView):
 
         if serializer.is_valid():
             serializer.save()
-            logger.debug(f"New order status {serializer.data.get('name')} created by {request.user.username} user: OrderStatusesAPIView API")
+            logger.debug(f"New order status '{serializer.data.get('name')}' created by {request.user.username} user: OrderStatusesAPIView API")
             return Response(serializer.data)
         else:
             return Response(serializer.errors, status=400)
@@ -50,15 +50,12 @@ class OrderStatusesAPIView(APIView):
 
 # View all order entries and create new one
 class AllOrderEntriesViewSet(viewsets.ViewSet):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAdminUser,)
 
     def get_queryset(self):
         return OrderEntry.objects.all()
 
     def list(self, request):
-        if not request.user.is_staff:
-            return Response({"message": "Access denied."})
-
         queryset = self.get_queryset()
         serializer = ReadOnlyOrderEntrySerializer(queryset, many=True)
 
@@ -66,9 +63,6 @@ class AllOrderEntriesViewSet(viewsets.ViewSet):
         return Response(serializer.data)
 
     def create(self, request):
-        if not request.user.is_staff:
-            return Response({"message": "Access denied."})
-
         created_order_entry = CreationOrderEntrySerializer.create(self=CreationOrderEntrySerializer(), validated_data=request.data)
         created_order_entry.save()
 
@@ -89,7 +83,7 @@ class SpecificOrderEntryViewSet(viewsets.ViewSet):
         if order_entry:
             serializer = ReadOnlyOrderEntrySerializer(order_entry)
 
-            logger.debug(f"Book with id {order_entry_id} viewed: SpecificOrderEntryViewSet API")
+            logger.debug(f"Order entry with id {order_entry_id} viewed: SpecificOrderEntryViewSet API")
             return Response(serializer.data)
         else:
             return Response({"message": "Order entry not found."}, status=404)
@@ -102,11 +96,11 @@ class SpecificOrderEntryViewSet(viewsets.ViewSet):
         if order_entry:
             serializer = CreationOrderEntrySerializer(CreationOrderEntrySerializer.update(self=CreationOrderEntrySerializer(),
                                                                               instance=order_entry, validated_data=request.data))
-            logger.debug(f"Book with id {order_entry_id} updated by {request.user.username} user: SpecificBookViewSet API")
+            logger.debug(f"Order entry with id {order_entry_id} updated by {request.user.username} user: SpecificOrderEntryViewSet API")
             return Response(serializer.data)
 
         else:
-            return Response({"message": "Book to update not found."}, status=404)
+            return Response({"message": "Order entry to update not found."}, status=404)
 
 
 # Create, retrieve and update OrderedBook entry
@@ -126,7 +120,7 @@ class OrderedBookAPIView(APIView):
         created_ordered_book = OrderedBookSerializer.create(self=OrderedBookSerializer(), validated_data=request.data)
         created_ordered_book.save()
 
-        logger.debug(f"New ordered book entry with id '{created_ordered_book.id}' created by {request.user.username}"
+        logger.debug(f"New ordered book entry with id '{created_ordered_book.id}' created by {request.user.username} "
                      f"user: OrderedBookAPIView API")
         return Response(request.data)
 
@@ -139,3 +133,13 @@ class OrderedBookAPIView(APIView):
             logger.debug(
                 f"Ordered book entry with id {ordered_book_id} updated by {request.user.username} user: OrderedBookAPIView API")
             return Response(serializer.data)
+
+    def delete(self, request, ordered_book_id):
+        ordered_book = OrderedBook.objects.filter(id=ordered_book_id).first()
+        if ordered_book:
+            ordered_book.delete()
+            logger.debug(f"Ordered book entry with id {ordered_book_id} successfully deleted by {request.user.username} "
+                         f"user: OrderedBookAPIView API")
+            return Response({"message": "Ordered book entry successfully deleted."}, status=204)
+        else:
+            return Response({"message": "Ordered book entry to delete not found."}, status=404)

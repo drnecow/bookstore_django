@@ -1,0 +1,5 @@
+2022-05-08 16:48:31,414 user.views   DEBUG    User with id 1 viewed by admin user: BookstoreUserReadOnlyAPIView API
+2022-05-08 16:50:04,097 user.views   DEBUG    User with id 1 viewed by admin user: BookstoreUserReadOnlyAPIView API
+2022-05-08 16:52:46,916 user.views   DEBUG    User with id 1 viewed by admin user: BookstoreUserReadOnlyAPIView API
+2022-05-08 16:58:30,457 user.views   DEBUG    User admin successfully logged in
+2022-05-08 17:04:57,795 user.views   DEBUG    User user_2 successfully logged in

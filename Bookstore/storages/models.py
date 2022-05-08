@@ -25,6 +25,7 @@ class Storage(models.Model):
     is_functional = models.BooleanField(default=True)
     delivery_available_cities = models.ManyToManyField(to=City, related_name='delivery_available_cities')
 
+    objects = models.Manager()
     storages = StorageQuerySet.as_manager()
 
     class Meta:

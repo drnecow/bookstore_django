@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from rest_framework.serializers import ModelSerializer, StringRelatedField, PrimaryKeyRelatedField
+from rest_framework.serializers import ModelSerializer, StringRelatedField
 
 from orders.models import OrderStatus, OrderEntry, OrderedBook
 from user.models import BookstoreUser, UserOrderAddress

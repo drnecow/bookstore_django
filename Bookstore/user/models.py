@@ -49,9 +49,6 @@ class BookstoreUser(AbstractUser):
     objects = UserManager()
     users = BookstoreUserQuerySet.as_manager()
 
-    # This field requires implementing hashing first.
-    # user_payment_cards = models.ManyToManyField(to=PaymentCard, related_name='user_payment_cards')
-
     class Meta:
         verbose_name = 'Пользователь'
         verbose_name_plural = 'Пользователи'

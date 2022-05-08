@@ -1,0 +1,17 @@
+2022-05-08 14:38:46,401 storages.views DEBUG    New storage with id '2' created by admin user: AllStoragesViewSet API
+2022-05-08 14:39:19,344 storages.views DEBUG    New storage with id '3' created by admin user: AllStoragesViewSet API
+2022-05-08 14:41:21,487 storages.views DEBUG    New storage with id '3' created by admin user: AllStoragesViewSet API
+2022-05-08 14:42:58,740 storages.views DEBUG    New storage with id '3' created by admin user: AllStoragesViewSet API
+2022-05-08 14:48:32,825 storages.views DEBUG    New storage with id '4' created by admin user: AllStoragesViewSet API
+2022-05-08 14:59:42,934 storages.views DEBUG    Storage with id 2 viewed: SpecificStorageViewSet API
+2022-05-08 15:01:38,870 storages.views DEBUG    Storage with id 2 updated by admin user: SpecificStorageViewSet API
+2022-05-08 15:02:18,932 storages.views DEBUG    Storage with id 2 updated by admin user: SpecificStorageViewSet API
+2022-05-08 15:02:31,752 storages.views DEBUG    Storage with id 2 updated by admin user: SpecificStorageViewSet API
+2022-05-08 15:03:14,504 storages.views DEBUG    Storage with id 2 updated by admin user: SpecificStorageViewSet API
+2022-05-08 15:03:50,030 storages.views DEBUG    Storage with id 2 updated by admin user: SpecificStorageViewSet API
+2022-05-08 15:35:39,680 storages.views DEBUG    Storage entry viewed by admin user: StorageEntryAPIView API
+2022-05-08 15:38:10,633 storages.views DEBUG    New storage entry with id '8' created by adminuser: StorageEntryAPIView API
+2022-05-08 15:39:50,043 storages.views DEBUG    Storage entry with id 1 updated by admin user: StorageEntryAPIView API
+2022-05-08 15:40:34,549 storages.views DEBUG    Ordered book entry with id 8 successfully deleted by admin user: StorageEntryAPIView API
+2022-05-08 15:40:47,654 storages.views DEBUG    New storage entry with id '8' created by adminuser: StorageEntryAPIView API
+2022-05-08 15:40:56,376 storages.views DEBUG    Ordered book entry with id 8 successfully deleted by admin user: StorageEntryAPIView API

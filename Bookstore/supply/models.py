@@ -44,6 +44,7 @@ class SupplyEntry(models.Model):
     due_date = models.DateField()
     status = models.ForeignKey(to=SupplyStatus, on_delete=models.CASCADE)
 
+    objects = models.Manager()
     entries = SupplyEntryQuerySet.as_manager()
 
     class Meta:

@@ -55,4 +55,4 @@ class OrderedBook(models.Model):
         db_table = 'ordered_books'
 
     def __str__(self):
-        return f'Order book "{self.book.name}" in order {self.related_order_entry.id}'
+        return f'Ordered book "{self.book.name}" in order {self.related_order_entry.id}, id: {self.pk}'

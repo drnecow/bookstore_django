@@ -1,0 +1,11 @@
+2022-05-08 16:20:39,733 supply.views DEBUG    All supply statuses viewed by admin user: SupplyStatusesAPIView API
+2022-05-08 16:21:25,801 supply.views DEBUG    All supply statuses viewed by admin user: SupplyStatusesAPIView API
+2022-05-08 16:21:34,262 supply.views DEBUG    New supply status 'новый статус' created by admin user: SupplyStatusesAPIView API
+2022-05-08 16:22:54,253 supply.views DEBUG    Supply status with id 5 successfully deleted by admin user: SupplyStatusesAPIView API
+2022-05-08 16:24:48,498 supply.views DEBUG    All supply entries viewed by admin: AllSupplyEntriesViewSet API
+2022-05-08 16:25:48,004 supply.views DEBUG    All supply entries viewed by admin: AllSupplyEntriesViewSet API
+2022-05-08 16:30:00,225 supply.views DEBUG    New supply entry with id '2' created by admin user: AllSupplyEntriesViewSet API
+2022-05-08 16:31:39,391 supply.views DEBUG    Supply entry with id 1 viewed: SpecificSupplyEntryViewSet API
+2022-05-08 16:33:45,485 supply.views DEBUG    Supply entry with id 1 updated by admin user: SpecificSupplyEntryViewSet API
+2022-05-08 16:34:45,998 supply.views DEBUG    Supply entry with id 1 updated by admin user: SpecificSupplyEntryViewSet API
+2022-05-08 17:05:09,158 supply.views DEBUG    All supply entries viewed by admin: AllSupplyEntriesViewSet API
